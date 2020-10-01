@@ -1,4 +1,4 @@
-version: '3.2'
+version: '3.1'
 services:
   api:
     build: .
@@ -28,6 +28,7 @@ services:
       - db:db
   db:
     image: postgres:latest
+    restart: always
     environment:
       POSTGRES_USER: "root"
       POSTGRES_PASSWORD: "root"
