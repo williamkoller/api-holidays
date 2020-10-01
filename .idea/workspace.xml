@@ -7,6 +7,12 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1iFrbwBqproowp0u1hQYUrhTGrA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -16,7 +22,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v12.18.4/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -27,11 +35,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601514257709</updated>
-      <workItem from="1601514259545" duration="943000" />
+      <workItem from="1601514259545" duration="1811000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="466" y="455" key="FileChooserDialogImpl" timestamp="1601515708292">
+      <screen x="0" y="312" width="1366" height="768" />
+    </state>
+    <state x="466" y="455" key="FileChooserDialogImpl/1366.0.1920.1080/0.312.1366.768@0.312.1366.768" timestamp="1601515708292" />
+    <state x="210" y="332" key="SettingsEditor" timestamp="1601515752699">
+      <screen x="0" y="312" width="1366" height="768" />
+    </state>
+    <state x="210" y="332" key="SettingsEditor/1366.0.1920.1080/0.312.1366.768@0.312.1366.768" timestamp="1601515752699" />
+    <state x="403" y="508" key="jetbrains.nodejs.interpreters-dialog" timestamp="1601515702211">
+      <screen x="0" y="312" width="1366" height="768" />
+    </state>
+    <state x="403" y="508" key="jetbrains.nodejs.interpreters-dialog/1366.0.1920.1080/0.312.1366.768@0.312.1366.768" timestamp="1601515702211" />
   </component>
 </project>
