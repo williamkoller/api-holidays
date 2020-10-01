@@ -3,6 +3,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/williamkoller/api-holidays)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/williamkoller/api-holidays)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/williamkoller/api-holidays)
+[![time tracker](https://wakatime.com/badge/github/williamkoller/api-holidays.svg)](https://wakatime.com/badge/github/williamkoller/api-holidays)
 
 ### Requisits to run this project
 
