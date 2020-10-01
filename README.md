@@ -1,3 +1,8 @@
+[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
+![GitHub top language](https://img.shields.io/github/languages/top/williamkoller/api-holidays)
+![GitHub language count](https://img.shields.io/github/languages/count/williamkoller/api-holidays)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/williamkoller/api-holidays)
+
 ### Requisits to run this project
 
 - Docker
