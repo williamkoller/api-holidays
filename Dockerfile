@@ -12,6 +12,6 @@ RUN yarn global add @adonisjs/cli nodemon
 RUN chown -R node:node /app
 USER node
 
-EXPOSE 3333
+EXPOSE 3334
 
 CMD ["adonis", "serve"]

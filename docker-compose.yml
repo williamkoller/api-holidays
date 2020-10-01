@@ -14,18 +14,18 @@ services:
       NODE_ENV: 'development'
 
       HOST: '0.0.0.0'
-      PORT: '3333'
-      volumes:
-        - .:/app
-        - /app/node_modules
-      ports:
-        - '3333:3333'
-        networks:
-          - default
-        depends_on:
-          - db
-        links:
-          - db:db
+      PORT: '3334'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - '3334:3334'
+    networks:
+      - default
+    depends_on:
+      - db
+    links:
+      - db:db
   db:
     image: postgres:latest
     environment:
@@ -34,4 +34,4 @@ services:
       POSTGRES_DB: "api-holidays"
       TZ: "GMT"
     ports:
-      - "5432:5432"
+      - '5432:5432'
