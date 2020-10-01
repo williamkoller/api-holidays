@@ -3,4 +3,7 @@
 
 const Route = use('Route')
 
-Route.post('login', 'AuthController.login').prefix('api')
+Route.group(() => {
+  Route.post('login', 'AuthController.login')
+  Route.post('auth', 'AuthController.auth')
+}).prefix('api')
