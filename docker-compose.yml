@@ -1,0 +1,37 @@
+version: '3.2'
+services:
+  api:
+    build: .
+    command: sh ./docker-start.sh
+    environment:
+      ENV_SILENT: "true"
+      DB_CONNECTION: "pg"
+      DB_DATABASE: "api-holidays"
+      DB_USER: "root"
+      DB_PASSWORD: "root"
+      DB_PORT: "5432"
+      DB_HOST: 'db'
+      NODE_ENV: 'development'
+
+      HOST: '0.0.0.0'
+      PORT: '3333'
+      volumes:
+        - .:/app
+        - /app/node_modules
+      ports:
+        - '3333:3333'
+        networks:
+          - default
+        depends_on:
+          - db
+        links:
+          - db:db
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "root"
+      POSTGRES_DB: "api-holidays"
+      TZ: "GMT"
+    ports:
+      - "5432:5432"
