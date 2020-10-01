@@ -6,20 +6,14 @@ const Schema = use('Schema')
 class UserSchema extends Schema {
   up() {
     this.create('users', (table) => {
-      table
-        .uuid('id')
-        .primary()
-        .unique()
-        .defaultTo(this.db.raw('uuid_generate_v4()'))
+      table.uuid('id').unique().defaultTo(this.db.raw('uuid_generate_v4()'))
       table.string('username', 200).notNullable()
-      table.string('fullname', 80).notNullable()
       table.string('email', 254).notNullable().unique()
       table.string('password', 60).notNullable()
 
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
       table.timestamp('deleted_at', { useTz: true })
-
     })
   }
 
