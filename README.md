@@ -2,6 +2,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/williamkoller/api-holidays)
 ![GitHub language count](https://img.shields.io/github/languages/count/williamkoller/api-holidays)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/williamkoller/api-holidays)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/williamkoller/api-holidays)
 
 ### Requisits to run this project
 
