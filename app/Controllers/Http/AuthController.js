@@ -1,6 +1,6 @@
 'use strict'
 
-const { User, MessageDefault } = use('App/Helpers/imports')
+const { User, MessageLauncher } = use('App/Helpers/imports')
 
 class AuthController {
   async login({ request, response }) {
@@ -9,7 +9,7 @@ class AuthController {
 
       const user = await User.create(data)
 
-      await MessageDefault.fireResponse(
+      await MessageLauncher.fireResponse(
         {
           status: 200,
           message: 'Your data has been successfully created.',
@@ -18,11 +18,11 @@ class AuthController {
         response
       )
     } catch (err) {
-      throw await MessageDefault.fireException({
+      throw await MessageLauncher.fireException({
         error: err,
         message: err.message,
         status: err.status,
-        type: err.type
+        type: err.name
       })
     }
   }

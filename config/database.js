@@ -32,7 +32,9 @@ module.exports = {
   sqlite: {
     client: 'sqlite3',
     connection: {
-      filename: Helpers.databasePath(`${Env.get('DB_DATABASE', 'development')}.sqlite`)
+      filename: Helpers.databasePath(
+        `${Env.get('DB_DATABASE', 'development')}.sqlite`
+      )
     },
     useNullAsDefault: true,
     debug: Env.get('DB_DEBUG', false)
@@ -73,12 +75,23 @@ module.exports = {
   pg: {
     client: 'pg',
     connection: {
-      host: Env.get('DB_HOST', '0.0.0.0'),
-      port: Env.get('DB_PORT', '5432'),
-      user: Env.get('DB_USER', 'root'),
-      password: Env.get('DB_PASSWORD', 'root'),
-      database: Env.get('DB_DATABASE', 'api-holidays')
+      host: Env.get('DB_HOST'),
+      port: Env.get('DB_PORT'),
+      user: Env.get('DB_USER'),
+      password: Env.get('DB_PASSWORD'),
+      database: Env.get('DB_DATABASE')
     },
+    poll: {
+      min: 1,
+      max: 16,
+      createTimeoutMillis: 3000,
+      acquireTimeoutMillis: 30000,
+      idleTimeoutMillis: 30000,
+      reapIntervalMillis: 1000,
+      createRetryIntervalMillis: 100,
+      propagateCreateError: false
+    },
+    acquireConnectionTimeout: 10000,
     debug: Env.get('DB_DEBUG', false)
   }
 }
