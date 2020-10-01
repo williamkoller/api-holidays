@@ -4,6 +4,11 @@ All notable changes to this project will be documented is this file.
 
 ## [Unrelease]
 
+## Add
+
+- Adding method auth on AuthController
+- Adding endpoint auth
+
 ## Release [v 1.1.0] 01-10-2020
 
 ### Added
