@@ -1,9 +1,9 @@
 'use strict'
 
-const { User, MessageLauncher } = use('App/Helpers/imports')
+const { User, MessageLauncher, Token } = use('App/Helpers/imports')
 
 class AuthController {
-  async login({ request, response }) {
+  async register({ request, response }) {
     try {
       const data = request.only(['username', 'email', 'password'])
 
@@ -27,16 +27,54 @@ class AuthController {
     }
   }
 
-  async auth({ request, response, auth }) {
+  async login({ request, response, auth }) {
     try {
       const { email, password } = request.all()
-      const token = await auth.attempt(email, password)
+
+      const user = await User.query()
+        .setHidden([''])
+        .where('email', email)
+        .fetch()
+        .then((users) => users.toJSON())
+
+      // Check the number of active tokens
+      const totalTokensActive = await Token.query()
+        .where({ is_revoked: false, user_id: user[0].id })
+        .fetch()
+
+      if (totalTokensActive > 0) {
+        await Token.query()
+          .where({
+            is_revoked: false,
+            user_id: user[0].id
+          })
+          .update({ is_revoked: true })
+      }
+
+      const data = await auth.withRefreshToken().attempt(email, password)
+
+      const isRevokedUpdate = await Token.query()
+        .where({
+          is_revoked: false,
+          device: null,
+          user_id: user[0].id
+        })
+        .update({ is_revoked: true })
+      console.log(`data: ${JSON.stringify(data)}`)
+
+      const { token, type } = data
 
       await MessageLauncher.fireResponse(
         {
           status: 200,
           message: 'You have successfully authenticated.',
-          instance: token
+          instance: {
+            type,
+            token,
+            refreshToken: data.refreshToken,
+            userId: user[0].id,
+            isRevokedUpdate: !!isRevokedUpdate
+          }
         },
         response
       )
