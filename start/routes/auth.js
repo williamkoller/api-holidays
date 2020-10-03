@@ -4,6 +4,6 @@
 const Route = use('Route')
 
 Route.group(() => {
+  Route.post('register', 'AuthController.register')
   Route.post('login', 'AuthController.login')
-  Route.post('auth', 'AuthController.auth')
 }).prefix('api')
