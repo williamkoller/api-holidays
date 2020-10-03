@@ -32,7 +32,6 @@ class AuthController {
       const { email, password } = request.all()
 
       const user = await User.query()
-        .setHidden([''])
         .where('email', email)
         .fetch()
         .then((users) => users.toJSON())
@@ -60,7 +59,6 @@ class AuthController {
           user_id: user[0].id
         })
         .update({ is_revoked: true })
-      console.log(`data: ${JSON.stringify(data)}`)
 
       const { token, type } = data
 
