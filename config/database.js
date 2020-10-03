@@ -81,9 +81,9 @@ module.exports = {
       password: Env.get('DB_PASSWORD'),
       database: Env.get('DB_DATABASE')
     },
-    poll: {
-      min: 1,
-      max: 16,
+    pool: {
+      min: 2,
+      max: 6,
       createTimeoutMillis: 3000,
       acquireTimeoutMillis: 30000,
       idleTimeoutMillis: 30000,
@@ -91,7 +91,6 @@ module.exports = {
       createRetryIntervalMillis: 100,
       propagateCreateError: false
     },
-    acquireConnectionTimeout: 10000,
     debug: Env.get('DB_DEBUG', false)
   }
 }
